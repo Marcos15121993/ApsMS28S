@@ -9,15 +9,21 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
 import java.util.Random;
+
 import javax.swing.JPanel;
 import javax.swing.Timer;
+
+
 
 public class GamePlay extends JPanel implements KeyListener, ActionListener {  //KeyListener detecting arroy key and ActionListener for moving the ball 
 
     private boolean play = false;
     public int score = 0;
-
+    public int Highest_score = Arquivo.readScore();
     private int totalBricks = 40;
 
     private Timer timer;
@@ -29,8 +35,13 @@ public class GamePlay extends JPanel implements KeyListener, ActionListener {  /
     private int ballPosY = 350;
     private int ballDirX = getRandomNumberForX();
     private int ballDirY = getRandomNumberForY();
+    
+
 
     private MapGenerator mapPlay;
+
+
+
 
     public GamePlay() {
         mapPlay = new MapGenerator(4, 10);
@@ -40,10 +51,13 @@ public class GamePlay extends JPanel implements KeyListener, ActionListener {  /
         setFocusTraversalKeysEnabled(false);
         timer = new Timer(delay, this);
         timer.start();
+
     }
 
     @Override
     public void paint(Graphics graphics) {
+
+        
         //background
         graphics.setColor(Color.black);
         graphics.fillRect(1, 1, 692, 592);
@@ -58,9 +72,10 @@ public class GamePlay extends JPanel implements KeyListener, ActionListener {  /
         graphics.fillRect(691, 1, 3, 592);
 
         //score
-        graphics.setColor(Color.white);
+        graphics.setColor(Color.gray);
         graphics.setFont(new Font("serif", Font.BOLD, 22));
         graphics.drawString("Score: " + score + "/200", 490, 30);
+        graphics.drawString("Highest score: " + Highest_score, 80, 30);
 
         //paddle
         graphics.setColor(Color.green);
@@ -70,7 +85,10 @@ public class GamePlay extends JPanel implements KeyListener, ActionListener {  /
             //game start message
             graphics.setColor(Color.YELLOW);
             graphics.setFont(new Font(Font.SANS_SERIF, Font.PLAIN, 25));
-            graphics.drawString("Press Enter/Left/Right Arrow to start the game!", 90, 350);
+             //graphics.drawString("Press Enter/Left/Right Arrow to start the game!", 90, 350); --old message
+             graphics.drawString("Press Enter to star", 250, 350);
+             graphics.setColor(Color.blue);
+             graphics.drawString("To move press the Left and Right Arrow", 150, 450);
 
             //ball hiding
             graphics.setColor(Color.black);
@@ -128,6 +146,7 @@ public class GamePlay extends JPanel implements KeyListener, ActionListener {  /
             graphics.setColor(Color.BLACK);
             graphics.setFont(new Font(Font.SANS_SERIF, Font.PLAIN, 25));
             graphics.drawString("Press Enter/Left/Right Arrow to start the game!", 90, 350);
+           
         }
 
         if (ballPosY > 570) { // if ball fall in down
@@ -290,4 +309,8 @@ public class GamePlay extends JPanel implements KeyListener, ActionListener {  /
         int randomNumber = min + random.nextInt(max - min + 1);
         return randomNumber;
     }
+
+
+
+
 }
