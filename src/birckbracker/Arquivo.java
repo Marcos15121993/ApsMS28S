@@ -1,14 +1,14 @@
 package birckbracker;
 
-
-
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 
-public class Arquivo {
+//classe responsavel por gestionar leitura e escrita do arquivo.
 
+public class Arquivo {
+	//insere valor do score maximo no arquivo 
     public static void writeScore(int Highest_score) {
 
      	File file = new File("./arquivo/score.txt");
@@ -24,7 +24,7 @@ public class Arquivo {
 		}
 
     }
-  
+  	//faz a leitura do valor do score maximo no arquivo 
     public static int readScore() {
 
 		int score = 0;
