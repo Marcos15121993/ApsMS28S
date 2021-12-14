@@ -5,24 +5,26 @@ package birckbracker;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
+import java.io.FileWriter;
+
 
 
 public class Arquivo {
 
-    public void writeScore() {
+    public static void writeScore(int Highest_score) {
 
-        //int score = 0;
-        Path caminho = Paths.get("C:/GitHub/ApsMS28S-main/arquivo/score.txt");
-        String  texto = "0";
-        byte[] textoEmByte = texto.getBytes();
-        try{
-            Files.write(caminho, textoEmByte);
-        }catch(Exception error){
-    
-        }
+     	File file = new File("./arquivo/score.txt");
+		
+		try {
+			FileWriter fw = new FileWriter(file);
+			System.out.println(Highest_score);
+			fw.write(String.valueOf(Highest_score));
+			fw.flush();
+			fw.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
   
     }
     
