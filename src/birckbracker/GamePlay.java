@@ -33,6 +33,7 @@ public class GamePlay extends JPanel implements KeyListener, ActionListener {  /
     private int ballPosY = 350;
     private int ballDirX = getRandomNumberForX();
     private int ballDirY = getRandomNumberForY();
+   
 	
 
     private MapGenerator mapPlay;
@@ -44,9 +45,10 @@ public class GamePlay extends JPanel implements KeyListener, ActionListener {  /
         addKeyListener(this);
         setFocusable(true);
         setFocusTraversalKeysEnabled(false);
+        Som.som();
         timer = new Timer(delay, this);
         timer.start();
-
+        
     }
 
     @Override
@@ -79,19 +81,9 @@ public class GamePlay extends JPanel implements KeyListener, ActionListener {  /
 
         if (play == false) {
         	graphicConfiguration.notPlay(graphics, ballPosX, ballPosY);
-											
-																		
-																											 
-																   
-										   
-																					 
-
-						 
-										   
-														  
+							  
         } else {
-						  
-										   
+				   
         	graphicConfiguration.isPlay(graphics, ballPosX, ballPosY);
         }
 
@@ -191,6 +183,7 @@ public class GamePlay extends JPanel implements KeyListener, ActionListener {  /
         }
 
         Arquivo.writeScore(Highest_score);
+        
        
         graphics.dispose();
     }
