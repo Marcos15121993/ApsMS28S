@@ -173,7 +173,6 @@ public class GamePlay extends JPanel implements KeyListener, ActionListener {  /
             //game start message
             graphics.setColor(Color.BLACK);
             graphics.setFont(new Font(Font.SANS_SERIF, Font.PLAIN, 25));
-            graphics.drawString("Press Enter/Left/Right Arrow to start the game!", 90, 350);
 			//graphics.drawString("Press Enter/Left/Right Arrow to start the game!", 90, 350); -- old message
             graphics.drawString("Press Enter to start", 250, 350);
             graphics.drawString("To move press the Left and Right Arrow", 150, 450);

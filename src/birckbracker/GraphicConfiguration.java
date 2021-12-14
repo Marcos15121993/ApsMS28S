@@ -15,7 +15,11 @@ public class GraphicConfiguration {
     public void notPlay(Graphics graphics, int ballPosX, int ballPosY) {
         graphics.setColor(Color.YELLOW);
         graphics.setFont(new Font(Font.SANS_SERIF, Font.PLAIN, 25));
-        graphics.drawString("Press Enter/Left/Right Arrow to start the game!", 90, 350);
+        
+        //graphics.drawString("Press Enter/Left/Right Arrow to start the game!", 90, 350); -- old message
+        graphics.drawString("Press Enter to start", 250, 350);
+        graphics.setColor(Color.blue);
+        graphics.drawString("To move press the Left and Right Arrow", 150, 450);
 
         //ball hiding
         graphics.setColor(Color.black);
