@@ -134,6 +134,7 @@ public class GamePlay extends JPanel implements KeyListener, ActionListener {  /
             graphics.setColor(Color.black);
             graphics.setFont(new Font("serif", Font.BOLD, 22));
             graphics.drawString("Score: " + score + "/200", 490, 30);
+            graphics.drawString("Highest score: " + Highest_score, 80, 30);
 
             //hide remains bricks
             mapPlay.draw((Graphics2D) graphics, Color.BLACK);
@@ -145,7 +146,9 @@ public class GamePlay extends JPanel implements KeyListener, ActionListener {  /
             //game start message
             graphics.setColor(Color.BLACK);
             graphics.setFont(new Font(Font.SANS_SERIF, Font.PLAIN, 25));
-            graphics.drawString("Press Enter/Left/Right Arrow to start the game!", 90, 350);
+           // graphics.drawString("Press Enter/Left/Right Arrow to start the game!", 90, 350); -Old message
+            graphics.drawString("Press Enter to star", 250, 350);
+            graphics.drawString("To move press the Left and Right Arrow", 150, 450);
            
         }
 
@@ -170,6 +173,8 @@ public class GamePlay extends JPanel implements KeyListener, ActionListener {  /
             graphics.setColor(Color.black);
             graphics.setFont(new Font("serif", Font.BOLD, 22));
             graphics.drawString("Score: " + score + "/200", 490, 30);
+            graphics.drawString("Highest score: " + Highest_score, 80, 30);
+            
 
             //hide remains bricks
             mapPlay.draw((Graphics2D) graphics, Color.BLACK);
@@ -181,7 +186,9 @@ public class GamePlay extends JPanel implements KeyListener, ActionListener {  /
             //game start message
             graphics.setColor(Color.BLACK);
             graphics.setFont(new Font(Font.SANS_SERIF, Font.PLAIN, 25));
-            graphics.drawString("Press Enter/Left/Right Arrow to start the game!", 90, 350);
+            //graphics.drawString("Press Enter/Left/Right Arrow to start the game!", 90, 350); -- old message
+            graphics.drawString("Press Enter to star", 250, 350);
+            graphics.drawString("To move press the Left and Right Arrow", 150, 450);
         }
         graphics.dispose();
     }

@@ -2,9 +2,7 @@ package birckbracker;
 
 import javax.swing.JFrame;
 
-//import java.nio.file.Files;
-//import java.nio.file.Path;
-//import java.nio.file.Paths;
+
 
 public class Main {
 
@@ -20,13 +18,6 @@ public class Main {
         obj.add(gamePlay);
        
 
-   /*     Path caminho = Paths.get("C:/GitHub/ApsMS28S-main/arquivo/score.txt");
-        String texto = "teste";
-        byte[] textoEmByte = texto.getBytes();
-        try{
-            Files.write(caminho, textoEmByte);
-        }catch(Exception error){
-            
-        }*/
+  
     }
 }
