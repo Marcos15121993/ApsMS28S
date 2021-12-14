@@ -7,8 +7,6 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 
-
-
 public class Arquivo {
 
     public static void writeScore(int Highest_score) {
@@ -25,10 +23,8 @@ public class Arquivo {
 			e.printStackTrace();
 		}
 
-  
     }
-    
-      
+  
     public static int readScore() {
 
 		int score = 0;

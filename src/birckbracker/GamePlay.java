@@ -16,7 +16,6 @@ import javax.swing.JPanel;
 import javax.swing.Timer;
 
 
-
 public class GamePlay extends JPanel implements KeyListener, ActionListener {  //KeyListener detecting arroy key and ActionListener for moving the ball 
 
     private boolean play = false;
@@ -35,9 +34,7 @@ public class GamePlay extends JPanel implements KeyListener, ActionListener {  /
     private int ballDirY = getRandomNumberForY();
     
 
-
     private MapGenerator mapPlay;
-
  
 
     public GamePlay() {
@@ -53,7 +50,6 @@ public class GamePlay extends JPanel implements KeyListener, ActionListener {  /
 
     @Override
     public void paint(Graphics graphics) {
-
         
         //background
         graphics.setColor(Color.black);
@@ -77,7 +73,6 @@ public class GamePlay extends JPanel implements KeyListener, ActionListener {  /
         //paddle
         graphics.setColor(Color.green);
         graphics.fillRect(playerX, 550, 100, 8);
-
    
 
         if (play == false) {
@@ -85,7 +80,7 @@ public class GamePlay extends JPanel implements KeyListener, ActionListener {  /
             graphics.setColor(Color.YELLOW);
             graphics.setFont(new Font(Font.SANS_SERIF, Font.PLAIN, 25));
              //graphics.drawString("Press Enter/Left/Right Arrow to start the game!", 90, 350); --old message
-             graphics.drawString("Press Enter to star", 250, 350);
+             graphics.drawString("Press Enter to start", 250, 350);
              graphics.setColor(Color.blue);
              graphics.drawString("To move press the Left and Right Arrow", 150, 450);
 
@@ -146,7 +141,7 @@ public class GamePlay extends JPanel implements KeyListener, ActionListener {  /
             graphics.setColor(Color.BLACK);
             graphics.setFont(new Font(Font.SANS_SERIF, Font.PLAIN, 25));
            // graphics.drawString("Press Enter/Left/Right Arrow to start the game!", 90, 350); -Old message
-            graphics.drawString("Press Enter to star", 250, 350);
+            graphics.drawString("Press Enter to start", 250, 350);
             graphics.drawString("To move press the Left and Right Arrow", 150, 450);
            
         }
@@ -163,8 +158,6 @@ public class GamePlay extends JPanel implements KeyListener, ActionListener {  /
             graphics.setColor(Color.RED);
             graphics.setFont(new Font("serif", Font.BOLD, 30));
             graphics.drawString("Game over! Score: " + score, 200, 300);
-           
-
 
             graphics.setColor(Color.YELLOW);
             graphics.setFont(new Font("serif", Font.BOLD, 20));
@@ -175,7 +168,6 @@ public class GamePlay extends JPanel implements KeyListener, ActionListener {  /
             graphics.setFont(new Font("serif", Font.BOLD, 22));
             graphics.drawString("Score: " + score + "/200", 490, 30);
             graphics.drawString("Highest score: " + Highest_score, 80, 30);
-            
 
             //hide remains bricks
             mapPlay.draw((Graphics2D) graphics, Color.BLACK);
@@ -188,7 +180,7 @@ public class GamePlay extends JPanel implements KeyListener, ActionListener {  /
             graphics.setColor(Color.BLACK);
             graphics.setFont(new Font(Font.SANS_SERIF, Font.PLAIN, 25));
             //graphics.drawString("Press Enter/Left/Right Arrow to start the game!", 90, 350); -- old message
-            graphics.drawString("Press Enter to star", 250, 350);
+            graphics.drawString("Press Enter to start", 250, 350);
             graphics.drawString("To move press the Left and Right Arrow", 150, 450);
         }
         if  (score > Highest_score){
